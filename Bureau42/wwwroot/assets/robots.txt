@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sensational-churros-c87148.netlify.app/sitemap.xml

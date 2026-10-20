@@ -1,0 +1,615 @@
+/* Xidmətlər səhifəsi. Ümumi header/footer index.css-dədir.
+   Kart qalxması, künc xətti və oxlu düymə Archline xidmət səhifəsinin ritmindədir. */
+
+/* Giriş: iki şəkil, ikincisi aşağı sürüşür */
+.svc-intro {
+  padding-bottom: 0;
+}
+
+.svc-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  align-items: start;
+  padding-top: calc(var(--header-h) + 1.25rem);
+}
+
+.svc-photos img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.svc-photo-drop {
+  margin-top: 0;
+}
+
+.svc-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  margin-top: 0;
+  padding: clamp(2.2rem, 4vw, 3.75rem) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--black) 20%, transparent);
+}
+
+.svc-heading h1 {
+  font-size: clamp(2.6rem, 4.6vw, 3.5rem);
+  font-weight: 650;
+  letter-spacing: var(--tracking);
+  line-height: 1.05;
+  text-transform: capitalize;
+}
+
+.svc-crumb {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.15rem;
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.svc-crumb a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.4s ease;
+}
+
+.svc-crumb svg {
+  width: 16px;
+  height: 16px;
+}
+
+.svc-crumb a:hover,
+.svc-crumb a:focus-visible {
+  color: var(--accent);
+}
+
+.svc-heading .lead {
+  max-width: 28em;
+  margin: 0;
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--black);
+}
+
+/* Mozaika: kənardan kənara, 4 / 3 / 2 / 1 sütun */
+.svc-board.section {
+  padding: clamp(2.75rem, 5vw, 4.5rem) 0 clamp(3.5rem, 7vw, 6rem);
+}
+
+.svc-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding-inline: 0.75rem;
+  align-items: stretch;
+}
+
+.svc-slot {
+  min-height: 100%;
+  display: flex;
+}
+
+.svc-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  padding: 2.5rem;
+  background: var(--white);
+  transition: transform 0.5s ease;
+}
+
+.svc-card::before,
+.svc-card::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.svc-card::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid var(--accent);
+  border-left: 1px solid var(--accent);
+}
+
+.svc-card::after {
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+.svc-card:hover,
+.svc-card:focus-within {
+  transform: translateY(-10px);
+}
+
+.svc-card:hover::before,
+.svc-card:hover::after,
+.svc-card:focus-within::before,
+.svc-card:focus-within::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.svc-icon {
+  width: 52px;
+  height: 52px;
+  color: var(--black);
+  transform-origin: center;
+}
+
+.svc-card:hover .svc-icon,
+.svc-card:focus-within .svc-icon {
+  animation: svc-wobble 0.7s ease;
+}
+
+@keyframes svc-wobble {
+  0%,
+  100% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(6deg); }
+  60% { transform: rotate(-4deg); }
+  80% { transform: rotate(2deg); }
+}
+
+.svc-card h2 {
+  margin-top: 3.125rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking);
+  line-height: 1.2;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 95%;
+  background-size: 0 2px;
+  transition: background-size 0.45s ease, color 0.3s ease;
+  align-self: flex-start;
+}
+
+.svc-card:hover h2,
+.svc-card:focus-within h2 {
+  color: var(--accent);
+  background-size: 100% 2px;
+}
+
+.svc-card p {
+  margin: 0.85rem 0 0;
+  color: var(--lead);
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+}
+
+/* Oxlu düymə: yazı ilə dairə arasında eyni boşluq, hoverdə də */
+button.svc-more {
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.svc-more {
+  --svc-arrow: 53px;
+  --svc-gap: 20px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  max-width: 100%;
+  margin-top: 3.125rem;
+  color: var(--black);
+}
+
+.svc-more-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--svc-arrow);
+  padding: 0.7rem 1.5rem;
+  border-radius: 40px;
+  background: color-mix(in srgb, var(--black) 10%, transparent);
+  font-size: 1.05rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-transform: capitalize;
+  transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+.svc-more-arrow {
+  width: var(--svc-arrow);
+  height: var(--svc-arrow);
+  flex: 0 0 var(--svc-arrow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--black) 10%, transparent);
+  transition: scale 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+.svc-more-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.svc-more-arrow-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  scale: 0;
+}
+
+.svc-more-arrow-right {
+  margin-left: var(--svc-gap);
+}
+
+.svc-more:hover .svc-more-arrow-left,
+.svc-more:focus-visible .svc-more-arrow-left {
+  scale: 1;
+}
+
+.svc-more:hover .svc-more-arrow-right,
+.svc-more:focus-visible .svc-more-arrow-right {
+  scale: 0;
+}
+
+.svc-more:hover .svc-more-label,
+.svc-more:focus-visible .svc-more-label {
+  transform: translateX(calc(var(--svc-arrow) + var(--svc-gap)));
+  background: var(--accent);
+  color: #fff;
+}
+
+.svc-more:hover .svc-more-arrow,
+.svc-more:focus-visible .svc-more-arrow {
+  background: var(--accent);
+  color: #fff;
+}
+
+.svc-photo {
+  flex: 1;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.svc-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 26rem;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.svc-slot:hover .svc-photo img {
+  transform: scale(1.06);
+}
+
+/* Xidmət izahı: eyni səhifədə açılan panel */
+.svc-detail:not([open]) {
+  display: none;
+}
+
+.svc-detail[open] {
+  display: flex;
+  flex-direction: column;
+  width: min(42rem, calc(100vw - 2rem));
+  max-height: min(85svh, 40rem);
+  margin: auto;
+  padding: 0.35rem 0.35rem 0 0;
+  border: 0;
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+html:has(.svc-detail[open]) {
+  overflow: hidden;
+}
+
+.svc-detail::backdrop {
+  background: rgba(11, 11, 11, 0.62);
+}
+
+.svc-detail-panel {
+  min-height: 0;
+  overflow: auto;
+  padding: 0 clamp(1.15rem, 3vw, 2.4rem) clamp(1.5rem, 3vw, 2.4rem);
+}
+
+.svc-detail-close {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: flex-end;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.svc-detail-close::before,
+.svc-detail-close::after {
+  content: "";
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  top: 50%;
+  height: 1.5px;
+  background: var(--black);
+}
+
+.svc-detail-close::before {
+  transform: rotate(45deg);
+}
+
+.svc-detail-close::after {
+  transform: rotate(-45deg);
+}
+
+.svc-detail h3 {
+  margin: 0.85rem 0 1.35rem;
+  max-width: 14em;
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: var(--tracking);
+  line-height: 1.1;
+}
+
+.svc-detail-panel [data-svc-copy] p {
+  margin: 0 0 0.95rem;
+  color: var(--lead);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+}
+
+.svc-detail .eyebrow {
+  margin: 0;
+}
+
+/* Missiya: solda başlıq, sağda akordeon */
+.svc-mission-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.svc-mission .section-heading {
+  max-width: 9em;
+  font-size: clamp(2rem, 3.4vw, 3.15rem);
+}
+
+.svc-mission .faq-list {
+  margin-top: 0.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--black) 35%, transparent);
+}
+
+.svc-mission .faq-item {
+  border-bottom: 1px solid color-mix(in srgb, var(--black) 35%, transparent);
+}
+
+.svc-mission .faq-item button {
+  position: relative;
+  align-items: center;
+  padding: 1.35rem 2.75rem 1.35rem 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.svc-mission .faq-item button span {
+  min-width: 0;
+}
+
+.svc-mission .plus {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+}
+
+.svc-mission .plus::before {
+  width: 16px;
+  height: 2px;
+}
+
+.svc-mission .plus::after {
+  width: 2px;
+  height: 16px;
+}
+
+.svc-mission .faq-item.is-open .plus::before,
+.svc-mission .faq-item.is-open .plus::after {
+  width: 16px;
+  height: 2px;
+}
+
+.svc-mission .faq-item.is-open .plus::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.svc-mission .faq-item.is-open .plus::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.svc-mission .answer-inner p {
+  max-width: 26.5rem;
+  padding: 0.35rem 0 0.35rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+  color: var(--lead);
+}
+
+@media (max-width: 1600px) {
+  .svc-card {
+    padding: 1.875rem;
+  }
+
+  .svc-card h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1399px) {
+  .svc-mission .faq-item button {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 1199px) {
+  .svc-mosaic {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .svc-mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .svc-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .svc-mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-mission .section-heading {
+    max-width: 16em;
+  }
+}
+
+@media (max-width: 767px) {
+  .svc-photos,
+  .svc-mosaic {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-photos {
+    gap: 0;
+  }
+
+  .svc-card {
+    padding: 1.5rem;
+  }
+
+  .svc-card h2,
+  .svc-more {
+    margin-top: 2rem;
+  }
+
+  .svc-photos img {
+    max-height: 240px;
+    aspect-ratio: 3 / 2;
+    height: auto;
+  }
+
+  .svc-photo img {
+    min-height: 16rem;
+    aspect-ratio: 16 / 10;
+    height: auto;
+  }
+
+  .svc-photo-drop {
+    margin-top: 30px;
+  }
+
+  .svc-heading {
+    padding: 1.75rem 0;
+  }
+
+  .svc-heading h1 {
+    font-size: clamp(2.4rem, 12vw, 3.2rem);
+  }
+
+  .svc-heading .lead {
+    font-size: 1rem;
+  }
+
+  .svc-more {
+    --svc-arrow: 48px;
+  }
+
+  .svc-more-label {
+    font-size: 1rem;
+    padding: 0.65rem 1.25rem;
+  }
+
+  .svc-mission .faq-item button {
+    padding: 1.05rem 2.5rem 1.05rem 0;
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .svc-photos {
+    padding-top: calc(var(--header-h) + 0.55rem);
+  }
+
+  .svc-photos img {
+    max-height: 7.5rem;
+  }
+
+  .svc-heading {
+    padding: 0.85rem 0;
+  }
+
+  .svc-photo-drop {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-card,
+  .svc-card::before,
+  .svc-card::after,
+  .svc-more-label,
+  .svc-more-arrow,
+  .svc-photo img {
+    transition: none;
+  }
+
+  .svc-card:hover,
+  .svc-card:focus-within,
+  .svc-more:hover .svc-more-label,
+  .svc-more:focus-visible .svc-more-label,
+  .svc-slot:hover .svc-photo img {
+    transform: none;
+  }
+
+  .svc-card:hover .svc-icon,
+  .svc-card:focus-within .svc-icon {
+    animation: none;
+  }
+}

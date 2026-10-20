@@ -1,0 +1,61 @@
+/* Əlaqə səhifəsi: AZ/EN/RU mətnlər.
+   site.js applyLang() bunu ümumi lüğətlə birləşdirir. */
+window.pageI18n = {
+  az: {
+    "page.docTitle": "Əlaqə — Bureau 042",
+    "page.kicker": "Bureau 042",
+    "page.title": "Əlaqə",
+    "page.lead": "Layihənizi danışmaq üçün yazın, zəng edin və ya ofisimizə gəlin.",
+    "skip": "Məzmuna keç",
+    "nav.close": "Bağla",
+    "nav.primary": "Əsas",
+    "top.label": "Yuxarı",
+    "info.address": "Ünvan",
+    "info.phone": "Telefon",
+    "info.email": "E-poçt",
+    "social.title": "Bizi izləyin",
+    "map.eyebrow": "Ofis",
+    "map.title": "Ofisimizə gəlin.",
+    "map.waze": "Waze-də aç",
+    "map.open": "Google Maps-də aç",
+    "map.frame": "Bureau 042 ofisi xəritədə"
+  },
+  en: {
+    "page.docTitle": "Contact — Bureau 042",
+    "page.kicker": "Bureau 042",
+    "page.title": "Contact",
+    "page.lead": "Write, call or visit our office to talk about your project.",
+    "skip": "Skip to content",
+    "nav.close": "Close",
+    "nav.primary": "Primary",
+    "top.label": "Back to top",
+    "info.address": "Address",
+    "info.phone": "Phone",
+    "info.email": "Email",
+    "social.title": "Follow us",
+    "map.eyebrow": "Office",
+    "map.title": "Visit our office.",
+    "map.waze": "Open in Waze",
+    "map.open": "Open in Google Maps",
+    "map.frame": "Bureau 042 office on the map"
+  },
+  ru: {
+    "page.docTitle": "Контакты — Bureau 042",
+    "page.kicker": "Bureau 042",
+    "page.title": "Контакты",
+    "page.lead": "Напишите, позвоните или приходите в наш офис, чтобы обсудить проект.",
+    "skip": "К содержанию",
+    "nav.close": "Закрыть",
+    "nav.primary": "Основное",
+    "top.label": "Наверх",
+    "info.address": "Адрес",
+    "info.phone": "Телефон",
+    "info.email": "Эл. почта",
+    "social.title": "Мы в соцсетях",
+    "map.eyebrow": "Офис",
+    "map.title": "Приходите в наш офис.",
+    "map.waze": "Открыть в Waze",
+    "map.open": "Открыть в Google Maps",
+    "map.frame": "Офис Bureau 042 на карте"
+  }
+};

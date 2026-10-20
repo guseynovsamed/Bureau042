@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="167" viewBox="16 42 144 120" role="img" aria-label="Bureau 042">
+  <circle cx="76" cy="101" r="46" fill="none" stroke="#7EAC34" stroke-width="11.5"/>
+  <g fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="7.2" font-weight="700">
+    <text x="36.99" y="125.38" transform="rotate(238.00 36.99 125.38)" text-anchor="middle" dominant-baseline="middle">a</text>
+    <text x="33.94" y="119.63" transform="rotate(246.11 33.94 119.63)" text-anchor="middle" dominant-baseline="middle">r</text>
+    <text x="31.74" y="113.52" transform="rotate(254.21 31.74 113.52)" text-anchor="middle" dominant-baseline="middle">c</text>
+    <text x="30.41" y="107.15" transform="rotate(262.32 30.41 107.15)" text-anchor="middle" dominant-baseline="middle">h</text>
+    <text x="30.00" y="100.66" transform="rotate(270.42 30.00 100.66)" text-anchor="middle" dominant-baseline="middle">i</text>
+    <text x="30.51" y="94.18" transform="rotate(278.53 30.51 94.18)" text-anchor="middle" dominant-baseline="middle">t</text>
+    <text x="31.92" y="87.83" transform="rotate(286.63 31.92 87.83)" text-anchor="middle" dominant-baseline="middle">e</text>
+    <text x="34.22" y="81.75" transform="rotate(294.74 34.22 81.75)" text-anchor="middle" dominant-baseline="middle">c</text>
+    <text x="37.35" y="76.05" transform="rotate(302.84 37.35 76.05)" text-anchor="middle" dominant-baseline="middle">t</text>
+    <text x="41.26" y="70.85" transform="rotate(310.95 41.26 70.85)" text-anchor="middle" dominant-baseline="middle">u</text>
+    <text x="45.85" y="66.26" transform="rotate(319.05 45.85 66.26)" text-anchor="middle" dominant-baseline="middle">r</text>
+    <text x="51.05" y="62.35" transform="rotate(327.16 51.05 62.35)" text-anchor="middle" dominant-baseline="middle">a</text>
+    <text x="56.75" y="59.22" transform="rotate(335.26 56.75 59.22)" text-anchor="middle" dominant-baseline="middle">l</text>
+    <text x="69.18" y="55.51" transform="rotate(351.47 69.18 55.51)" text-anchor="middle" dominant-baseline="middle">b</text>
+    <text x="75.66" y="55.00" transform="rotate(359.58 75.66 55.00)" text-anchor="middle" dominant-baseline="middle">u</text>
+    <text x="82.15" y="55.41" transform="rotate(367.68 82.15 55.41)" text-anchor="middle" dominant-baseline="middle">r</text>
+    <text x="88.52" y="56.74" transform="rotate(375.79 88.52 56.74)" text-anchor="middle" dominant-baseline="middle">e</text>
+    <text x="94.63" y="58.94" transform="rotate(383.89 94.63 58.94)" text-anchor="middle" dominant-baseline="middle">a</text>
+    <text x="100.38" y="61.99" transform="rotate(392.00 100.38 61.99)" text-anchor="middle" dominant-baseline="middle">u</text>
+  </g>
+  <g fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="400">
+    <text x="96" y="120" text-anchor="middle">4</text>
+    <text x="128" y="120" text-anchor="middle">2</text>
+  </g>
+</svg>

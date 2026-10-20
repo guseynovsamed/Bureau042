@@ -1,0 +1,213 @@
+/* 404: kran blokları yığır, yükləyici kimi dövr edir */
+
+/* Kran şəkli */
+.nf-build {
+  width: min(220px, 60vw);
+  height: auto;
+  margin-bottom: 2rem;
+  color: var(--black);
+  overflow: visible;
+}
+
+/* Ana səhifə düyməsi */
+.privacy-wrap .lead + .theme-btn {
+  margin-top: 1.8rem;
+}
+
+/* Xətlər və kontur */
+.nf-build .nf-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nf-build .nf-thin {
+  stroke-width: 1;
+  opacity: 0.55;
+}
+
+/* Bloklar və əks-yük */
+.nf-build .nf-block {
+  fill: var(--accent);
+}
+
+.nf-build .nf-weight {
+  fill: currentColor;
+}
+
+/* Hərəkət: trolley, yellənmə, qarmaq, yük, yığın */
+.nf-trolley,
+.nf-swing,
+.nf-hook,
+.nf-load,
+.nf-stack {
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nf-trolley {
+  animation-name: nf-trolley;
+}
+
+.nf-swing {
+  animation-name: nf-swing;
+  animation-timing-function: ease-in-out;
+  transform-box: view-box;
+  transform-origin: 70px 33px;
+}
+
+.nf-hook {
+  animation-name: nf-hook;
+}
+
+body.is-loading .nf-build * {
+  animation-play-state: paused;
+}
+
+.nf-load {
+  animation-name: nf-load;
+  animation-timing-function: linear;
+}
+
+.nf-stack {
+  opacity: 0;
+  animation-timing-function: linear;
+}
+
+.nf-stack-1 {
+  animation-name: nf-stack-1;
+}
+
+.nf-stack-2 {
+  animation-name: nf-stack-2;
+}
+
+.nf-stack-3 {
+  animation-name: nf-stack-3;
+}
+
+/* Trolley: kran boyunca gediş-gəliş */
+@keyframes nf-trolley {
+  0% { transform: translateX(0); }
+  2.4% { transform: translateX(0); }
+  12.0% { transform: translateX(80px); }
+  24.0% { transform: translateX(80px); }
+  30.0% { transform: translateX(0); }
+  32.4% { transform: translateX(0); }
+  42.0% { transform: translateX(80px); }
+  54.0% { transform: translateX(80px); }
+  60.0% { transform: translateX(0); }
+  62.4% { transform: translateX(0); }
+  72.0% { transform: translateX(80px); }
+  84.0% { transform: translateX(80px); }
+  90.0% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+/* Yellənmə: yük asılandan sonra sönən rəqs */
+@keyframes nf-swing {
+  0% { transform: rotate(0deg); }
+  2.4% { transform: rotate(0deg); }
+  6% { transform: rotate(-4.5deg); }
+  12% { transform: rotate(5.5deg); }
+  14.1% { transform: rotate(-3.5deg); }
+  16.2% { transform: rotate(2deg); }
+  18% { transform: rotate(0deg); }
+  24% { transform: rotate(0deg); }
+  26.4% { transform: rotate(-3deg); }
+  28.8% { transform: rotate(1.5deg); }
+  30% { transform: rotate(0deg); }
+  32.4% { transform: rotate(0deg); }
+  36% { transform: rotate(-4.5deg); }
+  42% { transform: rotate(5.5deg); }
+  44.1% { transform: rotate(-3.5deg); }
+  46.2% { transform: rotate(2deg); }
+  48% { transform: rotate(0deg); }
+  54% { transform: rotate(0deg); }
+  56.4% { transform: rotate(-3deg); }
+  58.8% { transform: rotate(1.5deg); }
+  60% { transform: rotate(0deg); }
+  62.4% { transform: rotate(0deg); }
+  66% { transform: rotate(-4.5deg); }
+  72% { transform: rotate(5.5deg); }
+  74.1% { transform: rotate(-3.5deg); }
+  76.2% { transform: rotate(2deg); }
+  78% { transform: rotate(0deg); }
+  84% { transform: rotate(0deg); }
+  86.4% { transform: rotate(-3deg); }
+  88.8% { transform: rotate(1.5deg); }
+  90% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Qarmaq: eniş və qalxış */
+@keyframes nf-hook {
+  0% { transform: translateY(0); }
+  12.0% { transform: translateY(0); }
+  18.6% { transform: translateY(70px); }
+  24.0% { transform: translateY(0); }
+  42.0% { transform: translateY(0); }
+  48.6% { transform: translateY(60px); }
+  54.0% { transform: translateY(0); }
+  72.0% { transform: translateY(0); }
+  78.6% { transform: translateY(50px); }
+  84.0% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+/* Yük: qarmaqda görünür, yerə qoyulanda yox olur */
+@keyframes nf-load {
+  0% { opacity: 0; }
+  0.0% { opacity: 0; }
+  2.4% { opacity: 1; }
+  18.6% { opacity: 1; }
+  18.61% { opacity: 0; }
+  30.0% { opacity: 0; }
+  32.4% { opacity: 1; }
+  48.6% { opacity: 1; }
+  48.61% { opacity: 0; }
+  60.0% { opacity: 0; }
+  62.4% { opacity: 1; }
+  78.6% { opacity: 1; }
+  78.61% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Yığın: hər blok yerinə qoyulanda görünür */
+@keyframes nf-stack-1 {
+  0%, 18.59% { opacity: 0; }
+  18.6%, 94% { opacity: 1; }
+  99%, 100% { opacity: 0; }
+}
+@keyframes nf-stack-2 {
+  0%, 48.59% { opacity: 0; }
+  48.6%, 94% { opacity: 1; }
+  99%, 100% { opacity: 0; }
+}
+@keyframes nf-stack-3 {
+  0%, 78.59% { opacity: 0; }
+  78.6%, 94% { opacity: 1; }
+  99%, 100% { opacity: 0; }
+}
+
+/* Azaldılmış hərəkət: animasiya dayanır, yığın görünür */
+@media (prefers-reduced-motion: reduce) {
+  .nf-trolley,
+  .nf-swing,
+  .nf-hook,
+  .nf-load,
+  .nf-stack {
+    animation: none;
+  }
+
+  .nf-load {
+    opacity: 0;
+  }
+
+  .nf-stack {
+    opacity: 1;
+  }
+}

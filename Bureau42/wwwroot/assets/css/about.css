@@ -1,0 +1,441 @@
+/* Haqqımızda səhifəsi: yalnız bu səhifəyə aid bloklar. Ümumi header/footer index.css-dədir. */
+
+/* Səhifə banneri: qısa intro, video yox */
+.page-hero {
+  position: relative;
+  min-height: min(78vh, 760px);
+  min-height: min(78dvh, 760px);
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+  overflow: hidden;
+}
+
+.page-hero-media {
+  position: absolute;
+  inset: 0;
+}
+
+.page-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.page-hero .wrap {
+  position: relative;
+  z-index: 1;
+  padding: calc(var(--header-h) + 3rem) 0 3.5rem;
+}
+
+.page-hero .hero-kicker {
+  color: #fff;
+}
+
+/* Banner başlığı: ana səhifənin 12ch limitini açırıq */
+.page-hero .hero-title,
+.page-hero .hero-lead {
+  color: #fff;
+}
+
+.page-hero .hero-title {
+  max-width: none;
+}
+
+/* Studia mətni + iki şəkil */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.about-intro-copy .lead {
+  margin: 1rem 0 1.5rem;
+  max-width: 36em;
+}
+
+.about-intro-media {
+  display: grid;
+  gap: 14px;
+}
+
+.about-intro-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.about-intro-media img:last-child {
+  width: 78%;
+  margin-left: auto;
+}
+
+/* Təcrübə ili + rəqəmlər */
+.about-exp {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+}
+
+.about-year {
+  font-family: var(--display);
+  font-size: clamp(6rem, 16vw, 11rem);
+  font-weight: 500;
+  letter-spacing: var(--tracking);
+  line-height: 0.85;
+  color: var(--black);
+}
+
+.about-year-kicker {
+  margin: 0.8rem 0 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.about-exp .lead {
+  margin: 0 0 2rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1.5rem;
+}
+
+.about-stat strong {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: var(--tracking);
+  line-height: 1;
+}
+
+.about-stat span {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Dörd prinsip */
+.values-head {
+  max-width: 38em;
+  margin-bottom: 2.5rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.value-card {
+  background: var(--body);
+  padding: 1.6rem 1.35rem 1.8rem;
+  min-height: 11rem;
+}
+
+.value-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.value-card p {
+  margin: 0;
+  color: var(--lead);
+}
+
+#team {
+  overflow: visible;
+}
+
+#team .wrap {
+  overflow: visible;
+}
+
+/* Komanda: Webflow team-members-hover ilə eyni davranış */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(6.5rem, 14vw, 12rem);
+  max-width: 1320px;
+  margin: 2.75rem auto 0;
+  padding-bottom: 0.5rem;
+  overflow: visible;
+}
+
+.team-card {
+  position: relative;
+  width: min(100%, 400px);
+  height: 475px;
+  overflow: visible;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+}
+
+.team-media {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.team-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  display: block;
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.team-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+    to top,
+    rgba(21, 16, 25, 0.94) 0%,
+    rgba(21, 16, 25, 0.78) 30%,
+    rgba(21, 16, 25, 0.35) 60%,
+    rgba(21, 16, 25, 0) 85%
+  );
+  opacity: 0.55;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.team-info {
+  position: absolute;
+  z-index: 2;
+  left: 1.35rem;
+  right: 1.15rem;
+  bottom: 1.35rem;
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.team-first,
+.team-last {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.65rem, 2.6vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: var(--tracking);
+  line-height: 1.15;
+  color: #fff;
+}
+
+.team-last {
+  margin-top: 0.05rem;
+}
+
+.team-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
+}
+
+.team-more > div {
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.team-role,
+.team-bio {
+  margin: 0;
+}
+
+.team-role {
+  padding-top: 0.75rem;
+  margin-bottom: 0.45rem;
+  font-family: var(--font);
+  font-size: 0.98rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.team-bio {
+  font-family: var(--font);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover .team-media img,
+  .team-card:focus-visible .team-media img {
+    transform: scale(1.12);
+  }
+
+  .team-card:hover .team-overlay,
+  .team-card:focus-visible .team-overlay {
+    opacity: 1;
+  }
+
+  .team-card:hover .team-more,
+  .team-card:focus-visible .team-more {
+    grid-template-rows: 1fr;
+    transition-delay: 0s;
+  }
+
+  .team-card:hover .team-more > div,
+  .team-card:focus-visible .team-more > div {
+    opacity: 1;
+    transition: opacity 0.35s ease 0.18s;
+  }
+
+  .value-card:hover h3 {
+    color: var(--accent);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .team-overlay {
+    opacity: 1;
+  }
+
+  .team-info {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .team-more {
+    grid-template-rows: 1fr;
+  }
+
+  .team-more > div {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .team-card {
+    width: min(100%, 340px);
+    height: 400px;
+  }
+
+  .team-grid {
+    gap: clamp(2rem, 6vw, 3.5rem);
+    padding-bottom: 0.5rem;
+  }
+
+  .about-intro,
+  .about-exp,
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Planşet: iki sütun yalnız geniş panellər üçün */
+@media (max-width: 1100px) and (min-width: 901px) {
+  .about-intro,
+  .about-exp,
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Telefon */
+@media (max-width: 767px) {
+  .page-hero {
+    min-height: 70vh;
+  }
+
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.75rem;
+    padding-bottom: 0;
+  }
+
+  .team-card {
+    width: min(100%, 360px);
+    height: min(72vw, 420px);
+  }
+
+  .team-info {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .team-overlay {
+    opacity: 1;
+  }
+
+  .team-more {
+    grid-template-rows: 1fr;
+  }
+
+  .team-more > div {
+    opacity: 1;
+  }
+
+  .team-first,
+  .team-last {
+    font-size: clamp(1.35rem, 6vw, 1.65rem);
+  }
+
+  .team-bio {
+    font-size: 0.88rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-clamp: 4;
+    overflow: hidden;
+  }
+
+  .about-intro-media img:last-child {
+    width: 100%;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-year {
+    font-size: clamp(4.5rem, 22vw, 7rem);
+  }
+}
+
+/* Dar telefon: statistika alt-alta */
+@media (max-width: 470px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    height: 360px;
+  }
+}
